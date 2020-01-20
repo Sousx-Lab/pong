@@ -1,0 +1,40 @@
+offsetHeight: 720
+offsetLeft: 442
+offsetParent: body
+offsetTop: 50
+offsetWidth: 1020
+
+(0, 0, 70, 700); PlyOne
+(930, 0, 980, 700); PlyTwo
+
+function playersMoving(){
+ window.onkeydown = function(event){
+        var keyPr = event.keyCode;
+        if (keyPr === 90 && plyOne.y > 10) {
+            plyOne.y = plyOne.y - vel;
+        } else if (keyPr === 83 && plyOne.y <= 590) {
+            plyOne.y = plyOne.y + vel;
+        }
+        ctx.clearRect(0, 0, 70, 700);
+        playerOneBody();
+
+        if (keyPr === 38 && plyTwo.y > 10) {
+            plyTwo.y = plyTwo.y - vel;
+        } else if (keyPr === 40 && plyTwo.y <= 590) {
+            plyTwo.y = plyTwo.y + vel;
+        }
+        ctx.clearRect(930, 0, 980, 700);
+        playerTwoBody();
+    }; 
+};
+playersMoving();
+
+
+
+if (ball.y + speedY >= canvasHeight ||
+            ball.y + speedY <= 0){ 
+          speedY = -speedY;
+        }
+        if (ball.x + speedX >= canvasWidth ||
+            ball.x + speedX <= 0) {
+          speedX = -speedX;
