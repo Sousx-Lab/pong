@@ -1,1 +1,1 @@
-# 🕹Pong with JS vanilla 😋
+# 🕹Pong vanilla JS 😋
